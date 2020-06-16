@@ -1,0 +1,68 @@
+version: "2.4"
+
+services:
+  couchdb-0:
+    restart: always
+    environment:
+      COUCHDB_USER: ${COUCHDB_USER}
+      COUCHDB_PASSWORD: ${COUCHDB_PASSWORD}
+      COUCHDB_SECRET: ${COUCHDB_SECRET}
+      NODENAME: couchdb-0.${COMPOSE_PROJECT_NAME}
+      ERL_FLAGS: "-setcookie ${COUCHDB_COOKIE}"
+    image: couchdb:3
+    networks:
+      network:
+        aliases:
+          - couchdb-0.${COMPOSE_PROJECT_NAME}
+    ports:
+      - "${PORT_BASE}0:5984"
+    volumes:
+      - "data-couch-0:/opt/couchdb/data"
+      - "cfg-couch-0:/opt/couchdb/etc/local.d"
+  couchdb-1:
+    restart: always
+    environment:
+      COUCHDB_USER: ${COUCHDB_USER}
+      COUCHDB_PASSWORD: ${COUCHDB_PASSWORD}
+      COUCHDB_SECRET: ${COUCHDB_SECRET}
+      NODENAME: couchdb-1.${COMPOSE_PROJECT_NAME}
+      ERL_FLAGS: "-setcookie ${COUCHDB_COOKIE}"
+    image: couchdb:3
+    networks:
+      network:
+        aliases:
+          - couchdb-1.${COMPOSE_PROJECT_NAME}
+    ports:
+      - "${PORT_BASE}1:5984"
+    volumes:
+      - "data-couch-1:/opt/couchdb/data"
+      - "cfg-couch-1:/opt/couchdb/etc/local.d"
+  couchdb-2:
+    restart: always
+    environment:
+      COUCHDB_USER: ${COUCHDB_USER}
+      COUCHDB_PASSWORD: ${COUCHDB_PASSWORD}
+      COUCHDB_SECRET: ${COUCHDB_SECRET}
+      NODENAME: couchdb-2.${COMPOSE_PROJECT_NAME}
+      ERL_FLAGS: "-setcookie ${COUCHDB_COOKIE}"
+    image: couchdb:3
+    networks:
+      network:
+        aliases:
+          - couchdb-2.${COMPOSE_PROJECT_NAME}
+    ports:
+      - "${PORT_BASE}2:5984"
+    volumes:
+      - "data-couch-2:/opt/couchdb/data"
+      - "cfg-couch-2:/opt/couchdb/etc/local.d"
+
+networks:
+  network:
+
+volumes:
+  data-couch-0:
+  cfg-couch-0:
+  data-couch-1:
+  cfg-couch-1:
+  data-couch-2:
+  cfg-couch-2:
