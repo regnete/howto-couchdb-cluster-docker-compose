@@ -5,9 +5,9 @@
 
 2. adjust values in .env to your needs
 
-3. docker-compose up -d
+3. `docker-compose up -d`
 
-4. ./init-cluster.sh
+4. `./init-cluster.sh`
 
 
 ## Notes
