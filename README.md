@@ -1,5 +1,4 @@
-# howto-couchdb-cluster-docker-compose
-How to setup a CouchDB cluster with docker-compose
+#How to setup a CouchDB cluster with docker-compose
 
 ##Setup
 1. clone this repo
