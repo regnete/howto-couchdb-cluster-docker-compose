@@ -25,3 +25,8 @@ In consequence the hashes for the admin passwords differ between nodes and you a
 - https://github.com/apache/couchdb-docker/issues/74
 - https://github.com/apache/couchdb/issues/2858
 
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
